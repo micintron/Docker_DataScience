@@ -1,0 +1,28 @@
+This is an example of a docker data science work environment -
+
+contents -
+Currently pulls all data from 
+https://hub.docker.com/r/jupyter/datascience-notebook/
+
+
+This holds Jupiter notebook , python 3 and many library built in such libs
+Such as scikit learn  
+
+Run guide 
+First open the terminal at location folder containing the docker file
+
+Run 
+Docker build -t ds.
+
+This will build a docker container named ds that you can run 
+
+Finally run the container with the command 
+docker run -it -p 8888:8888 ds
+
+To create a volume where data will be stored 
+docker volume create dsv
+
+To attach a volume with data to the image 
+run --name Test -v dsv/_data  -p 8888:8888  ds
+
+
